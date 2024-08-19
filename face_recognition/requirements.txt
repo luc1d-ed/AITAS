@@ -1,3 +1,2 @@
 cmake-python
 face-recognition
-dlib
