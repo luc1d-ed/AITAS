@@ -4,9 +4,9 @@ import json
 from simple_facerec import SimpleFacerec
 
 # Check if detected_list.json exists
-if os.path.isfile('face_recognition/detected_list.json'):
+if os.path.isfile('front_end/detected_list.json'):
     # Delete the existing detected_list.json
-    os.remove('face_recognition/detected_list.json')
+    os.remove('front_end/detected_list.json')
     print('Deleted previous detected_list.json')
     
 # Encode faces from a folder
@@ -21,7 +21,7 @@ face_names_dict = {}
 
 # Load existing face names from JSON file if it exists
 try:
-    with open('face_recognition/detected_list.json', 'r') as f:
+    with open('front_end/detected_list.json', 'r') as f:
         face_names_dict = json.load(f)
         print('Created new detected_list.json')
 except FileNotFoundError:
