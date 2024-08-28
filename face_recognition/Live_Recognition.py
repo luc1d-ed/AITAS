@@ -50,7 +50,7 @@ while True:
 
         if name != "Unknown" and name not in face_names_dict:
             face_names_dict[name] = True  # Add face name to dictionary
-            with open('face_recognition/detected_list.json', 'w') as f:
+            with open('front_end/detected_list.json', 'w') as f:
                 json.dump(face_names_dict, f)  # Write dictionary to JSON file
 
     cv2.imshow("Frame", frame)
