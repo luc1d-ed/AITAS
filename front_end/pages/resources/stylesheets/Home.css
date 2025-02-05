@@ -9,7 +9,7 @@
 
 body {
   font-family: Fjalla One;
-  background-image: url(../images/attendance-bg.png);  
+  background-image: url(../images/home-bg.png);  
   background-attachment: fixed;
   background-size: cover;
   overflow: hidden;
@@ -174,7 +174,7 @@ body {
 }
 
 #timeline .timeline-item .timeline-icon {
-  background: #eb5153;
+  background: #e96a6c;
   width: 50px;
   height: 50px;
   position: absolute;
@@ -193,12 +193,12 @@ body {
   top: 13px;
   left: 14px;
   font-size: 24px;
-  color: #c4c4c4;
+  color: #fafafa;
 }
 
 #timeline .timeline-item .timeline-content {
   width: 45%;
-  background: #c4c4c4;
+  background: #fafafa;
   padding: 20px;
   -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
@@ -217,7 +217,7 @@ body {
 #timeline .timeline-item .timeline-content h2 {
   padding: 15px;
   background: #e93b3e;
-  color: #c4c4c4;
+  color: #fafafa;
   margin: -20px -20px 0 -20px;
   font-weight: 300;
   -webkit-border-radius: 3px 3px 0 0;
