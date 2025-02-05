@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITAS</title>
+    <link rel="icon" href="./resources/icons/sxd-logo.ico" type="image/png">
+    <link rel="stylesheet" href="./resources/stylesheets/Home.css">
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src = "./resources/javascript/Home.js"></script>
+</head>
+
+<body>
+  <div class="title">
+    <img class="logo-img" src="./resources/icons/sxd-logo.png">
+    <h1>St. Xavier's School, Doranda <br> <span class ="subheading">IT Exhibition - 2023</span></h1>
+    <div class="date">
+      <span id="current-date"></span>
+    </div>
+  </div>
+
+  <div class="bar">
+    <a href="">
+      <div class="home-bar">
+        <img class="bar-icon" src="./resources/icons/home.png"></img>
+        <span>Home</span>
+      </div>
+    </a>
+    <a href="Attendance.html">
+      <div class="attendance-bar">
+        <img class="bar-icon" src="./resources/icons/attendance.png"></img>
+        <span>Attendance</span>
+      </div>
+    </a>
+    <a href="Graph.html">
+      <div class="graph-bar">
+        <img class="bar-icon" src="./resources/icons/graph.png"></img>
+        <span>Graph</span>
+      </div>
+    </a>
+  </div>
+  
+  <div class="timeline-container">
+    <div id="timeline">
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <a href=""><img class="timeline-page-icon" src="./resources/icons/home.png"></a>
+          </div>
+          <div class="timeline-content">
+            <h2>AITAS</h2>
+            <p>
+              AITAS or "Artificial Intelligence Total Attendance System". This web app is your companion to monitor the attendance of the students of your respective classes. 
+            </p>
+          </div>
+        </div>
+  
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <a href="Attendance.html"><img class="timeline-page-icon" src="./resources/icons/attendance.png"></a>
+          </div>
+          <div class="timeline-content right">
+            <h2>Attendance Page</h2>
+            <p>
+              Attendance viewer page, where you can watch the attendance of your students in real time.
+            </p>
+          </div>
+        </div>
+  
+        <div class="timeline-item">
+          <div class="timeline-icon">
+            <a href="Graph.html"><img class="timeline-page-icon" src="./resources/icons/graph.png"></a>
+          </div>
+          <div class="timeline-content">
+            <h2>Graphs Page</h2>
+            <p>
+              The graphs page will show you precise statistics of your students daily and monthly attendance.
+            </p>
+          </div>
+        </div>
+  
+         <div class="timeline-item">
+          <div class="timeline-icon">
+            <a href="https://stxaviersschool.com" target="_blank"><img class="timeline-page-icon" src="./resources/icons/mail.png"></a>
+          </div>
+          <div class="timeline-content right">
+            <h2>IT Exhibition</h2>
+            <p>
+              This project was made for SXD IT Exhibiotion 2023
+            </p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+<script>
+  const currentDate = new Date();
+  const day = currentDate.getDate().toString().padStart(2, '0');
+  const month = currentDate.toLocaleString('default', { month: 'short' }).toUpperCase();
+  document.getElementById('current-date').innerHTML = `${day}<br>${month}`;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="icon" href="./resources/icons/sxd-logo.ico" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="./resources/stylesheets/Attendance.css">
+</head>
+
+<body>
+  <div class="title">
+    <img class="logo-img" src="./resources/icons/sxd-logo.png">
+    <h1>St. Xavier's School, Doranda <br> <span class ="subheading">IT Exhibition - 2023</span></h1>
+    <div class="date">
+      <span id="current-date"></span>
+    </div>
+  </div>
+
+  <div class="bar">
+    <a href="Home.html">
+      <div class="home-bar">
+        <img class="bar-icon" src="./resources/icons/home.png"></img>
+        <span>Home</span>
+      </div>
+    </a>
+    <a href="">
+      <div class="attendance-bar">
+        <img class="bar-icon" src="./resources/icons/attendance.png"></img>
+        <span>Attendance</span>
+      </div>
+    </a>
+    <a href="Graph.html">
+      <div class="graph-bar">
+        <img class="bar-icon" src="./resources/icons/graph.png"></img>
+        <span>Graph</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="students">
+
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="img-card">
+          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
+        </div>
+        <div class="name-card">
+          <span class="student-name">Ayush Samuel</span>
+        </div>
+      </div>
+      
+    </div>
+
+
+<script>
+  const currentDate = new Date();
+  const day = currentDate.getDate().toString().padStart(2, '0');
+  const month = currentDate.toLocaleString('default', { month: 'short' }).toUpperCase();
+  document.getElementById('current-date').innerHTML = `${day}<br>${month}`;
+</script>
+
+</body>
+</html>
