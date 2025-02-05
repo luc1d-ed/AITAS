@@ -1,0 +1,33 @@
+.card{
+    color: white;
+display: flex;
+flex-direction: column;
+background-color: #839ecc;
+border: 1px solid black;
+height: 250px;
+width: 150px;
+justify-content: flex-end;
+align-content: space-around;
+flex-wrap: wrap;
+border-radius: 10px;
+}
+.image img{
+    width: 110px;
+    border-radius: 30px;
+    position: absolute;
+    top: 20px;
+}
+.card-absent{
+    opacity: 40%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background-color: #f95b34;
+    border: 5px solid #d93636;
+    height: 250px;
+    width: 150px;
+    justify-content: flex-end;
+    align-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
