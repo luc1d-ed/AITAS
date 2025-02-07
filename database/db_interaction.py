@@ -5,25 +5,31 @@ def data_insertion():
     conn = sqlite3.connect('aitas_main.db')
     cursor = conn.cursor()
 
-    with open('photo.jpg', 'rb') as file:
-        photo_data = file.read()
+    # List of student names and corresponding photo paths
+    student_names = ['Anthony', 'Collin', 'David', 'Duncan', 'Ella', 'Irene', 'Julian', 'Liam', 'Sam', 'Yvonne']  # Add your student names here
+    photo_paths = ['photos/Anthony.jpg', 'photos/Collin.jpg', 'photos/David.jpg', 'photos/Duncan.jpg', 'photos/Ella.jpg', 'photos/Irene.jpg', 'photos/Julian.jpg', 'photos/Liam.jpg', 'photos/Sam.jpeg', 'photos/Yvonne.jpg']  # Add your photo paths here
 
     # Insert data into the table
-    cursor.execute("INSERT INTO students (index_number, name, photo, date, state) VALUES (?, ?, ?, ?, ?)",
-                   (1, 'John Doe', photo_data, '2023-04-01', 'present'))
+    for student_id, (name, photo_path) in enumerate(zip(student_names, photo_paths), start=1):
+        with open(photo_path, 'rb') as file:
+            photo_data = file.read()
+
+        cursor.execute("INSERT INTO Students (StudentID, Name, Photo) VALUES (?, ?, ?)",
+                       (student_id, name, photo_data))
 
     # Commit the changes and close the connection
     conn.commit()
     conn.close()
     print("Data inserted successfully.")
 
+
 def check_data():
     # Connect to the database
     conn = sqlite3.connect('aitas_main.db')
     cursor = conn.cursor()
 
-    # Retrieve all rows from the students table
-    cursor.execute("SELECT * FROM students")
+    # Retrieve specific columns from the students table
+    cursor.execute("SELECT StudentID, Name FROM Students")
     rows = cursor.fetchall()
 
     # Print the retrieved rows

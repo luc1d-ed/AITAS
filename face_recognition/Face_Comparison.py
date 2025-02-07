@@ -15,7 +15,7 @@ def compare_faces(img_encoding1, img_encoding2):
     else:
         print("They are different persons")
 
-img_encoding = encode_image("face_recognition/images/stock/Messi1.jpg")
-img_encoding2 = encode_image("face_recognition/images/stock/Ryan Reynolds.jpg")
+img_encoding = encode_image("face_recognition/images/Sergio_Canu.jpg")
+img_encoding2 = encode_image("face_recognition/images/Liam.jpg")
 
 compare_faces(img_encoding, img_encoding2)
