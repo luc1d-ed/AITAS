@@ -9,7 +9,7 @@ app.use(express.static(__dirname));
 
 // Define a route for the root URL ("/")
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'front_end', 'Home.html'));
+  res.sendFile(path.join(__dirname, 'Home.html'));
 });
 
 // Start the server
