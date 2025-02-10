@@ -10,7 +10,7 @@ def data_insertion():
     photo_paths = ['photos/Anthony.jpg', 'photos/Collin.jpg', 'photos/David.jpg', 'photos/Duncan.jpg', 'photos/Ella.jpg', 'photos/Irene.jpg', 'photos/Julian.jpg', 'photos/Liam.jpg', 'photos/Sam.jpeg', 'photos/Yvonne.jpg']  # Add your photo paths here
 
     # Insert data into the table
-    for student_id, (name, photo_path) in enumerate(zip(student_names, photo_paths), start=1):
+    for student_id, (name, photo_path) in enumerate(zip(student_names, photo_paths), start=101):
         with open(photo_path, 'rb') as file:
             photo_data = file.read()
 

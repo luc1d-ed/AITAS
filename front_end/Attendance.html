@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Attendance</title>
-    <link rel="icon" href="./resources/icons/sxd-logo.ico" type="image/png">
+    <link rel="icon" href="./resources/icons/sxd-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="./resources/stylesheets/Attendance.css">
@@ -20,19 +20,19 @@
   </div>
 
   <div class="bar">
-    <a href="Home.html">
+    <a href="/">
       <div class="home-bar">
         <img class="bar-icon" src="./resources/icons/home.png"></img>
         <span>Home</span>
       </div>
     </a>
-    <a href="">
+    <a href="/Attendance">
       <div class="attendance-bar">
         <img class="bar-icon" src="./resources/icons/attendance.png"></img>
         <span>Attendance</span>
       </div>
     </a>
-    <a href="Graph.html">
+    <a href="/Graph">
       <div class="graph-bar">
         <img class="bar-icon" src="./resources/icons/graph.png"></img>
         <span>Graph</span>
@@ -40,108 +40,42 @@
     </a>
   </div>
 
-  <div class="students">
+  <div class="students" id="students">
+    <!-- Student photos will be added here -->
+  </div>
 
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
+  <script>
+    const currentDate = new Date();
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    const month = currentDate.toLocaleString('default', { month: 'short' }).toUpperCase();
+    document.getElementById('current-date').innerHTML = `${day}<br>${month}`;
 
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="img-card">
-          <img class="student-img" src = "./resources/database/profile_pictures/Ayush Samuel Mundu.jpg">
-        </div>
-        <div class="name-card">
-          <span class="student-name">Ayush Samuel</span>
-        </div>
-      </div>
-      
-    </div>
+    fetch('/photos', { method: 'POST' })
+      .then(response => response.json())
+      .then(photos => {
+        const studentsDiv = document.getElementById('students');
+        photos.forEach(photo => {
+          const card = document.createElement('div');
+          card.classList.add('card');
 
+          const imgCard = document.createElement('div');
+          imgCard.classList.add('img-card');
 
-<script>
-  const currentDate = new Date();
-  const day = currentDate.getDate().toString().padStart(2, '0');
-  const month = currentDate.toLocaleString('default', { month: 'short' }).toUpperCase();
-  document.getElementById('current-date').innerHTML = `${day}<br>${month}`;
-</script>
+          const img = document.createElement('img');
+          img.classList.add('student-img');
+          img.src = photo;
+          imgCard.appendChild(img);
+
+          const nameCard = document.createElement('div');
+          nameCard.classList.add('name-card');
+          nameCard.innerHTML = '<span class="student-name">Ayush Samuel</span>';
+
+          card.appendChild(imgCard);
+          card.appendChild(nameCard);
+          studentsDiv.appendChild(card);
+        });
+      });
+  </script>
 
 </body>
 </html>
