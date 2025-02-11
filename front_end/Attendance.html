@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="./resources/stylesheets/Attendance.css">
+    <script src="./resources/javascript/Attendance.js" defer></script>
 </head>
 
 <body>
@@ -40,42 +41,7 @@
     </a>
   </div>
 
-  <div class="students" id="students">
-    <!-- Student photos will be added here -->
-  </div>
-
-  <script>
-    const currentDate = new Date();
-    const day = currentDate.getDate().toString().padStart(2, '0');
-    const month = currentDate.toLocaleString('default', { month: 'short' }).toUpperCase();
-    document.getElementById('current-date').innerHTML = `${day}<br>${month}`;
-
-    fetch('/photos', { method: 'POST' })
-      .then(response => response.json())
-      .then(photos => {
-        const studentsDiv = document.getElementById('students');
-        photos.forEach(photo => {
-          const card = document.createElement('div');
-          card.classList.add('card');
-
-          const imgCard = document.createElement('div');
-          imgCard.classList.add('img-card');
-
-          const img = document.createElement('img');
-          img.classList.add('student-img');
-          img.src = photo;
-          imgCard.appendChild(img);
-
-          const nameCard = document.createElement('div');
-          nameCard.classList.add('name-card');
-          nameCard.innerHTML = '<span class="student-name">Ayush Samuel</span>';
-
-          card.appendChild(imgCard);
-          card.appendChild(nameCard);
-          studentsDiv.appendChild(card);
-        });
-      });
-  </script>
-
+  <div class="students" id="students"></div>
+  
 </body>
 </html>

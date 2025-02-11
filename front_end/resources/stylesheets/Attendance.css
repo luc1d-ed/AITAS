@@ -144,22 +144,20 @@ body {
 } 
 
 .student-img {
-  width: 100px;
+  width: 120px;
   border-radius: 30%;
   margin-bottom: 40px;
 }
 
-
-/* ABSENT
-.card:hover {
-  background-color: #b5494981;
+.name-span {
+  text-align: center;
+  font-size: 26px;
 }
 
 
-PRESENT
-.card:hover {
+.card.present {
   background-color: #349a4881;
 }
-
-*/
-
+.card.absent {
+  background-color: #b5494981;
+}
