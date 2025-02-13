@@ -3,9 +3,15 @@ const multer = require('multer');
 const express = require('express');
 const sqlite3 = require('sqlite3');
 const { Base64Encode } = require('base64-stream');
+const http = require('http');
+const socketIo = require('socket.io');
 
 const app = express();
-const port = 3000; // You can change the port number if needed
+const server = http.createServer(app);
+const io = socketIo(server);
+const port = 3000;
+
+// Multer configuration
 const upload = multer();
 
 // Serve static files from the current directory ("front_end")
@@ -65,7 +71,30 @@ app.get('/attendance-status', (req, res) => {
   });
 });
 
-// Start the server
-app.listen(port, () => {
+// Function to fetch and emit attendance status
+function emitAttendanceStatus() {
+  const db = new sqlite3.Database('../database/aitas_main.db', sqlite3.OPEN_READONLY, (err) => {
+    if (err) return console.error(err.message);
+  });
+
+  const sql = "SELECT StudentID, Status FROM Attendance";
+  db.all(sql, [], (err, rows) => {
+    if (err) return console.error(err.message);
+
+    rows.forEach((row) => {
+      const studentId = row.StudentID;
+      const status = row.Status;
+      io.emit('attendanceChanged', { studentId, status });
+    });
+  });
+}
+
+// Emit attendance status initially
+emitAttendanceStatus();
+
+// Emit attendance status every 5 seconds (adjust the interval as needed)
+setInterval(emitAttendanceStatus, 5000);
+
+server.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

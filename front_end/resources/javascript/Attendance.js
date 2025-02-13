@@ -56,3 +56,21 @@ fetch('/photos', { method: 'POST' })
         // Display an error message to the user or take appropriate action
       });
   });
+
+// WebSocket connection
+const socket = io();
+
+socket.on('attendanceChanged', (data) => {
+  // Update the attendance status here
+  const { studentId, status } = data;
+  const card = document.querySelector(`div.card[data-student-id="${studentId}"]`);
+  if (card) {
+    if (status === 1) {
+      card.classList.add('present');
+      card.classList.remove('absent');
+    } else if (status === 0) {
+      card.classList.add('absent');
+      card.classList.remove('present');
+    }
+  }
+});
