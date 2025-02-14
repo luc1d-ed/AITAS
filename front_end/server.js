@@ -1,15 +1,15 @@
+const http = require('http');
 const path = require('path');
 const multer = require('multer');
 const express = require('express');
 const sqlite3 = require('sqlite3');
-const { Base64Encode } = require('base64-stream');
-const http = require('http');
 const socketIo = require('socket.io');
+const { Base64Encode } = require('base64-stream');
 
-const app = express();
-const server = http.createServer(app);
-const io = socketIo(server);
 const port = 3000;
+const app = express();
+const io = socketIo(server);
+const server = http.createServer(app);
 
 // Multer configuration
 const upload = multer();
