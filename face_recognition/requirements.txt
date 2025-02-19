@@ -1,2 +1,4 @@
+cmake
+numpy
 cmake-python
 face-recognition
