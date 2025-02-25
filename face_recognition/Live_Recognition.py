@@ -31,7 +31,7 @@ try:
         sfr.load_encoding_image(img, student_id)
 
     # Get today's date
-    today = date.today().strftime("%Y-%m-%d")
+    today = date.today().strftime("%d-%m-%Y")
     
     while True:
         ret, frame = cap.read()
