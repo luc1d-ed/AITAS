@@ -8,8 +8,9 @@ const { Base64Encode } = require('base64-stream');
 
 const port = 3000;
 const app = express();
-const io = socketIo(server);
 const server = http.createServer(app);
+
+const io = socketIo(server);
 
 // Multer configuration
 const upload = multer();

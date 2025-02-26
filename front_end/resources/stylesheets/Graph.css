@@ -90,7 +90,7 @@ body {
   text-decoration: none;
 }
 
-.home-bar, .attendance-bar, .graph-bar {
+.home-bar, .attendance-bar, .graph-bar, .calendar-bar {
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -107,4 +107,10 @@ body {
   width: 40px;
   height: 40px;
   margin-right: 20px;
+}
+
+.calendar-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
 }
