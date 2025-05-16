@@ -173,7 +173,7 @@ body {
   top: 100%;
   z-index: 100;
   margin-top: 2px;
-  background: #fff;
+  background: #eeeeeef7;
   padding: 10px;
   border-radius: 5px;
   font-family: Fjalla One;
@@ -227,11 +227,11 @@ body {
 
 .dates button.today {
   background: rgba(147, 112, 216, 0.2);
-  color: mediumpurple;
+  color: #343275;
 }
 
 .dates button.selected {
-  background: mediumpurple;
+  background: #343275;
   color: #fff;
 }
 
@@ -247,7 +247,7 @@ body {
 .datepicker-header input {
   font-size: 14px;
   border: 1px solid #eee;
-  outline-color: mediumpurple;
+  outline-color: #343275;
 }
 
 .datepicker-header input {
@@ -259,7 +259,7 @@ body {
 }
 
 .datepicker-header button:hover {
-  color: mediumpurple;
+  color: #343275;
 }
 
 .datepicker-footer {
@@ -276,9 +276,10 @@ body {
 }
 
 .datepicker-footer button.apply {
-  background: mediumpurple;
+  background: #343275;
   color: #fff;
 }
+
 
 .card.present {
   background-color: #349a4881;
